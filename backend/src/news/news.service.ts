@@ -3,7 +3,7 @@ import { Repository } from 'typeorm';
 import { News } from './news.entity';
 import { Injectable } from '@nestjs/common';
 
-// NewsService consists of the usual service method implementations mills.
+// NewsService consists of the usual service method implementations news.
 // The services handle the requested data which can be reused accross the application.
 @Injectable()
 export class NewsService {
