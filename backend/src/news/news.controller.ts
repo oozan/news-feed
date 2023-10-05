@@ -16,8 +16,8 @@ import { NewsDTO } from './dto/news.dto';
 export class NewsController {
   constructor(private readonly newsService: NewsService) {}
 
-  // getAll gets all the mill entities
-  // with the /news endpoint.
+  // getAll gets all the news entities
+  // with the /news endpoint.xw
   @Get('/')
   @ApiResponse({
     status: 200,
