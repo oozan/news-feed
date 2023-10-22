@@ -1,10 +1,11 @@
 import clsx from "clsx";
 
 export interface LayoutProps {
+  children: React.ReactNode;
   testId?: string;
 }
 
-export const Layout = ({ testId }: LayoutProps): JSX.Element => {
+export const Layout = ({ children, testId }: LayoutProps): JSX.Element => {
   const layoutClasses = clsx(
     "relative mx-auto min-h-screen max-w-[1440px] lg:grid lg:grid-cols-[240px,1fr] lg:grid-rows-[80px,1fr]",
     {}
@@ -15,7 +16,7 @@ export const Layout = ({ testId }: LayoutProps): JSX.Element => {
     <section className={layoutClasses} data-testid={testId}>
       Test
       <main className={mainClasses} data-testid="main">
-        Test
+        {children}
       </main>
     </section>
   );
