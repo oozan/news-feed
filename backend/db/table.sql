@@ -5,7 +5,7 @@ CREATE TABLE newsfeed (
 	content TEXT NOT NULL,
 	news TEXT NOT NULL,
 	created_by TEXT NOT NULL,
-        created_at TIMESTAMP 
+    created_at TIMESTAMP 
 );
 
 -- Insert values for newsfeed table
