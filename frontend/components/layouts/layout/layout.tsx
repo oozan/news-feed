@@ -1,3 +1,5 @@
+import { MobileNavigation } from "@blocks/mobile-navigation/mobile-navigation";
+import { Sidebar } from "@layouts/sidebar/sidebar";
 import clsx from "clsx";
 
 export interface LayoutProps {
@@ -14,10 +16,11 @@ export const Layout = ({ children, testId }: LayoutProps): JSX.Element => {
 
   return (
     <section className={layoutClasses} data-testid={testId}>
-      Test
+      <Sidebar className="row-span-2 row-start-1 max-lg:hidden" />
       <main className={mainClasses} data-testid="main">
         {children}
       </main>
+      <MobileNavigation />
     </section>
   );
 };
