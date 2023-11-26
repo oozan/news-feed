@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import lang_en from "./locales/en.json";
+import lang_fi from "./locales/fi.json";
 
 export type AvailableLanguages = keyof typeof languageResources;
 
@@ -9,6 +10,9 @@ const defaultNS = "translation";
 export const languageResources = {
   en: {
     translation: lang_en,
+  },
+  fi: {
+    translation: lang_fi,
   },
 };
 
