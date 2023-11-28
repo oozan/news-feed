@@ -14,6 +14,11 @@ interface NavigationItem {
   icon: IconName;
 }
 
+const navigationItems: NavigationItem[] = [
+  { label: t("navigation.dashboard"), url: "/", icon: IconName.home },
+  { label: t("navigation.news"), url: "/news", icon: IconName.news },
+];
+
 export const DesktopNavigation = ({
   isCondensed,
 }: DesktopNavigationProps): JSX.Element | null => {
@@ -29,9 +34,16 @@ export const DesktopNavigation = ({
         className={desktopNavigationListClasses}
         data-testid={"desktop-navigation-list"}
       >
-        <DesktopNavigationItem iconName={IconName.news} url="/news">
-          {t("navigation.news")}
-        </DesktopNavigationItem>
+        {navigationItems.map(({ label, url, icon }) => (
+          <DesktopNavigationItem
+            iconName={icon}
+            url={url}
+            key={label}
+            hiddenLabel={isCondensed}
+          >
+            {label}
+          </DesktopNavigationItem>
+        ))}
       </ul>
     </nav>
   );
