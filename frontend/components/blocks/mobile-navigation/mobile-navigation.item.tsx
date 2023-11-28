@@ -19,8 +19,8 @@ export const MobileNavigationItem = ({
   const mobileNavigationItemClasses = clsx("");
   const mobileLinkNavigationClasses = clsx(
     "fill-link-water text-link-water before:hidden",
-    "hover:fill-peal-lusta hover:text-peal-lusta hover:before:block",
-    "focus:fill-peal-lusta focus:text-peal-lusta focus:before:block",
+    "hover:fill-zinc-900 hover:text-peal-lusta hover:before:block",
+    "focus:fill-zinc-900 focus:text-peal-lusta focus:before:block",
     "relative flex h-full flex-col items-center justify-center gap-0.5 py-2 px-1",
     "before:absolute before:inset-1 before:rounded-md before:bg-alto/20"
   );
