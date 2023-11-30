@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: backend:development
+    container_name: backend_dev
+    command: ["npm", "run", "start:dev"]
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+
+  db:
+    image: postgres:13
+    container_name: postgres_dev
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
