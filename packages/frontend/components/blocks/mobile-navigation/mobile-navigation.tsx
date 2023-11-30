@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 
 import { MobileNavigationItem } from "@blocks/mobile-navigation/mobile-navigation.item";
@@ -17,7 +16,6 @@ const navigationItems: NavigationItem[] = [
 ];
 
 export const MobileNavigation = (): JSX.Element | null => {
-  const { t } = useTranslation();
   const mobileNavigationClasses = clsx(
     "fixed inset-x-0 bottom-0 z-50 h-[50px] bg-black lg:hidden"
   );
