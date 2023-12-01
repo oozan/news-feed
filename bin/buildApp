@@ -1,0 +1,9 @@
+#!/bin/sh
+
+npm -w backend run build
+npm -w frontend run build
+
+rm -rf build
+mkdir build/
+cp -r packages/backend/dist/ build/server
+cp -r packages/frontend/build/ build/client
