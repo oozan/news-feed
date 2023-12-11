@@ -24,6 +24,6 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-The dev server runs by default in port 4001.
+The dev server runs by default in port 3001.
 
-For the OpenAPI description, [open localhost](http://localhost:4001/api) in your browser.
+For the OpenAPI description, [open localhost](http://localhost:3001/api) in your browser.
