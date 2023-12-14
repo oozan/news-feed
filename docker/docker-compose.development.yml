@@ -1,29 +1,20 @@
-version: "3.6"
+version: "3.8"
 
 services:
   backend:
     build:
       context: .
       dockerfile: Dockerfile
-    image: backend:development
-    container_name: backend_dev
-    command: ["npm", "run", "start:dev"]
-    ports:
-      - "4000:4000"
     environment:
-      - NODE_ENV=development
-      - POSTGRES_HOST=db
-      - POSTGRES_PORT=5432
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      NODE_ENV: development
+    volumes:
+      - ./packages/backend:/app
 
-  db:
-    image: postgres:13
-    container_name: postgres_dev
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: news
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: news
     ports:
       - "5432:5432"
-    environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
