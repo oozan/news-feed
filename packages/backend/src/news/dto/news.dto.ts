@@ -1,21 +1,28 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Exclude, Expose } from 'class-transformer';
 @Exclude()
 export class NewsDTO {
+  @ApiProperty()
   @Expose()
   id: string;
 
+  @ApiProperty()
   @Expose()
   title: string;
 
+  @ApiProperty()
   @Expose()
   content: string;
 
+  @ApiProperty()
   @Expose()
   news: string;
 
+  @ApiProperty()
   @Expose()
   created_by: string;
 
+  @ApiProperty()
   @Expose()
   created_at: Date;
 
