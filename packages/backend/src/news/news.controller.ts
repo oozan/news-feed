@@ -10,6 +10,7 @@ import { NewsService } from './news.service';
 import { ApiTags, ApiResponse } from '@nestjs/swagger';
 import convertEntitiesToDTOs from 'src/utiliy/type.converters';
 import { NewsDTO } from './dto/news.dto';
+import { News } from './news.entity';
 
 // Newa controller receives /news requests for the client.
 @UseInterceptors(ClassSerializerInterceptor)
@@ -24,7 +25,7 @@ export class NewsController {
   @ApiResponse({
     status: 200,
     description: 'List of news that provide data to the database of this API.',
-    type: NewsDTO,
+    type: News,
     isArray: true,
   })
   async getAll() {
