@@ -15,6 +15,7 @@
     "import",
     "tailwindcss"
   ],
+  "ignorePatterns": ["/redux/api/generated/*"],
   "env": {
     "browser": true,
     "es6": true,

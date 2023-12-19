@@ -1,42 +1,40 @@
-import { Layout } from "@layouts/layout/layout";
+// news.tsx
 
-interface NewsProps {
-  data: any; // Replace 'any' with the actual type of your data if possible
-}
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNews, selectNews } from "@redux/NewsSlice"; // Replace with the correct path
 
-const NewsPage: React.FC<NewsProps> = ({ data }) => {
+const NewsPage: React.FC = () => {
+  const dispatch = useDispatch();
+  const { news, status, error } = useSelector(selectNews);
+
+  useEffect(() => {
+    // Dispatch the fetchNews action directly
+    dispatch(fetchNews() as any); // Casting as any to resolve type error
+  }, [dispatch]);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "failed") {
+    return <div>Error: {error}</div>;
+  }
+
   return (
-    <Layout>
-      <h1>Testing The Data from the backend</h1>
-      {data ? (
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      ) : (
-        <p>Loading data...</p>
-      )}
-    </Layout>
+    <div>
+      <h1>News Page</h1>
+      <ul>
+        {news.map((item) => (
+          <li key={item.id}>
+            <h3>{item.title}</h3>
+            <p>{item.content}</p>
+            {/* Add more fields as needed */}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
-
-export async function getServerSideProps() {
-  const backendUrl = "http://localhost:3001/news-feed/v1/news"; // Adjust the API endpoint as needed
-
-  try {
-    const response = await fetch(backendUrl);
-    const data = await response.json();
-
-    return {
-      props: {
-        data,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: {
-        data: null,
-      },
-    };
-  }
-}
 
 export default NewsPage;

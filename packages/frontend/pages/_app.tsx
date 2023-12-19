@@ -1,8 +1,15 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
+// _app.tsx
 
-import "../i18n/i18n";
+import { Provider } from "react-redux";
+import { AppProps } from "next/app";
+import store from "@redux/store";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
+
+export default MyApp;

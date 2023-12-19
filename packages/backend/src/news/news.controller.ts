@@ -15,7 +15,7 @@ import { News } from './news.entity';
 // Newa controller receives /news requests for the client.
 @UseInterceptors(ClassSerializerInterceptor)
 @ApiTags('Version 1')
-@Controller('/news-feed/v1/news')
+@Controller()
 export class NewsController {
   constructor(private readonly newsService: NewsService) {}
 

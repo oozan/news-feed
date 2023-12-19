@@ -18,7 +18,16 @@
     "paths": {
       "@elements/*": ["components/elements/*"],
       "@blocks/*": ["components/blocks/*"],
-      "@layouts/*": ["components/layouts/*"]
+      "@layouts/*": ["components/layouts/*"],
+      "@page-components/*": ["components/pages/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@mocks/*": ["mocks/*"],
+      "@constants/*": ["constants/*"],
+      "@fixtures/*": ["fixtures/*"],
+      "@styles/*": ["styles/*"],
+      "@redux/*": ["redux/*"],
+      "@i18n/*": ["i18n/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx", "**/**/*.tsx"],
