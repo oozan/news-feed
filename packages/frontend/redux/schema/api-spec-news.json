@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/news-feed": {
+      "get": {
+        "operationId": "App_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/news-feed/news/news-feed/v1/news": {
+      "get": {
+        "operationId": "News_getAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "List of news that provide data to the database of this API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/News"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Version 1"]
+      }
+    }
+  },
+  "info": {
+    "title": "Edge Reference Solution Data API",
+    "description": "",
+    "version": "API version 1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "News": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "news": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "content",
+          "news",
+          "created_by",
+          "created_at"
+        ]
+      }
+    }
+  }
+}
