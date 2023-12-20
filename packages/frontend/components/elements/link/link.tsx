@@ -1,8 +1,8 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
-import { LinkExternal } from '@elements/link/link.external';
-import { LinkInternal } from '@elements/link/link.internal';
-import { isExternalUrl } from 'utils/isExternalUrl';
+import { LinkExternal } from "@elements/link/link.external";
+import { LinkInternal } from "@elements/link/link.internal";
+import { isExternalUrl } from "utils/isExternalUrl";
 
 interface LinkProps {
   children: React.ReactNode;
@@ -13,8 +13,15 @@ interface LinkProps {
   isAbsolute?: boolean;
 }
 
-export const Link = ({ url, children, className = '', activeClassName = '', testId, isAbsolute }: LinkProps) => {
-  const linkClasses = clsx('', {
+export const Link = ({
+  url,
+  children,
+  className = "",
+  activeClassName = "",
+  testId,
+  isAbsolute,
+}: LinkProps) => {
+  const linkClasses = clsx("", {
     [className]: className,
   });
 
@@ -34,7 +41,12 @@ export const Link = ({ url, children, className = '', activeClassName = '', test
   }
 
   return (
-    <LinkInternal url={url} className={linkClasses} testId={testId} activeClassName={activeClassName}>
+    <LinkInternal
+      url={url}
+      className={linkClasses}
+      testId={testId}
+      activeClassName={activeClassName}
+    >
       {linkContent}
     </LinkInternal>
   );

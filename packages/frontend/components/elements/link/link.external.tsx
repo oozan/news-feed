@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
 interface LinkExternalProps {
   children: React.ReactNode;
@@ -7,11 +7,16 @@ interface LinkExternalProps {
   testId?: string;
 }
 
-export const LinkExternal = ({ children, className = '', url, testId }: LinkExternalProps): JSX.Element => (
+export const LinkExternal = ({
+  children,
+  className = "",
+  url,
+  testId,
+}: LinkExternalProps): JSX.Element => (
   <a
     href={url}
     className={clsx({ [className]: true })}
-    data-testid={testId ?? 'link-external'}
+    data-testid={testId ?? "link-external"}
     rel="noreferrer nofollow"
   >
     {children}

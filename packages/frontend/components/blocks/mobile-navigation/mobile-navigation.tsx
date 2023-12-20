@@ -1,8 +1,7 @@
-import clsx from "clsx";
-import { t } from "i18next";
-
 import { MobileNavigationItem } from "@blocks/mobile-navigation/mobile-navigation.item";
 import { IconName } from "@elements/icon/icon";
+import clsx from "clsx";
+import { t } from "i18next";
 
 interface NavigationItem {
   label: string;
@@ -17,6 +16,7 @@ const navigationItems: NavigationItem[] = [
 
 export const MobileNavigation = (): JSX.Element | null => {
   const mobileNavigationClasses = clsx(
+    // eslint-disable-next-line prettier/prettier
     "fixed inset-x-0 bottom-0 z-50 h-[50px] bg-black lg:hidden"
   );
   const mobileNavigationListClasses = clsx("grid h-full grid-cols-2");

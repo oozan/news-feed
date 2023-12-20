@@ -1,8 +1,8 @@
 // news.tsx
 
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchNews, selectNews } from "@redux/NewsSlice"; // Replace with the correct path
+import { fetchNews, selectNews } from '@redux/NewsSlice'; // Replace with the correct path
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const NewsPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -10,14 +10,15 @@ const NewsPage: React.FC = () => {
 
   useEffect(() => {
     // Dispatch the fetchNews action directly
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dispatch(fetchNews() as any); // Casting as any to resolve type error
   }, [dispatch]);
 
-  if (status === "loading") {
+  if (status === 'loading') {
     return <div>Loading...</div>;
   }
 
-  if (status === "failed") {
+  if (status === 'failed') {
     return <div>Error: {error}</div>;
   }
 

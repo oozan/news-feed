@@ -1,9 +1,7 @@
+import { Icon, IconName } from "@elements/icon/icon";
+import { Link } from "@elements/link/link";
 import clsx from "clsx";
 import React from "react";
-
-import { Link } from "@elements/link/link";
-
-import { Icon, IconName } from "@elements/icon/icon";
 
 interface MobileNavigationItemProps {
   url: string;
@@ -17,12 +15,13 @@ export const MobileNavigationItem = ({
   iconName,
 }: MobileNavigationItemProps): JSX.Element => {
   const mobileNavigationItemClasses = clsx("");
+  // eslint-disable-next-line tailwindcss/no-custom-classname
   const mobileLinkNavigationClasses = clsx(
     "fill-link-water text-link-water before:hidden",
-    "hover:fill-zinc-900 hover:text-peal-lusta hover:before:block",
-    "focus:fill-zinc-900 focus:text-peal-lusta focus:before:block",
-    "relative flex h-full flex-col items-center justify-center gap-0.5 py-2 px-1",
-    "before:absolute before:inset-1 before:rounded-md before:bg-alto/20"
+    "hover:text-peal-lusta hover:fill-zinc-900 hover:before:block",
+    "focus:text-peal-lusta focus:fill-zinc-900 focus:before:block",
+    "relative flex h-full flex-col items-center justify-center gap-0.5 px-1 py-2",
+    "before:bg-alto/20 before:absolute before:inset-1 before:rounded-md",
   );
 
   return (
@@ -35,7 +34,7 @@ export const MobileNavigationItem = ({
         url={url}
         testId="mobile-navigation-link"
         activeClassName={clsx(
-          "fill-peal-lusta font-bold text-peal-lusta before:!block"
+          "fill-peal-lusta text-peal-lusta font-bold before:!block",
         )}
       >
         {iconName && (

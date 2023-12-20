@@ -27,9 +27,15 @@
       "@fixtures/*": ["fixtures/*"],
       "@styles/*": ["styles/*"],
       "@redux/*": ["redux/*"],
-      "@i18n/*": ["i18n/*"]
+      "@i18n/*": ["i18n/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx", "**/**/*.tsx"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.js",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/**/*.tsx",
+    ],
   "exclude": ["node_modules"]
 }

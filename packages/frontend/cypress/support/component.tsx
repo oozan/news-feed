@@ -14,15 +14,15 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import "./commands";
-import "../plugins/tailwind";
+import './commands';
+import '../plugins/tailwind';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { mount as cypressMount } from "cypress/react18";
-import { ReactNode } from "react";
+import { mount as cypressMount } from 'cypress/react18';
+import { ReactNode } from 'react';
 
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
@@ -41,7 +41,7 @@ declare global {
 // cy.mount(<MyComponent />)
 
 beforeEach(function () {
-  const testFilter = Cypress.env("TEST_FILTER");
+  const testFilter = Cypress.env('TEST_FILTER');
   if (!testFilter) return; // exit if no filter defined
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment

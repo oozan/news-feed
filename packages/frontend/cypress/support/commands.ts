@@ -33,28 +33,28 @@ declare namespace Cypress {
       selector: string,
       options?: Partial<Loggable & Timeoutable & Withinable & Shadow>
     ): Chainable<JQuery<Element>>;
-    viewport(preset: "mobile" | "tablet" | "desktop"): Chainable<null>;
+    viewport(preset: 'mobile' | 'tablet' | 'desktop'): Chainable<null>;
   }
 }
 
-Cypress.Commands.add("getByTestId", (selector, ...args) => {
+Cypress.Commands.add('getByTestId', (selector, ...args) => {
   return cy.get(`[data-testid=${selector}]`, ...args);
 });
 
-Cypress.Commands.overwrite("viewport", (originalFn, ...args) => {
+Cypress.Commands.overwrite('viewport', (originalFn, ...args) => {
   if (args.length > 1) return originalFn(...args);
 
   const [preset] = args;
 
-  if (preset === "mobile") {
+  if (preset === 'mobile') {
     return cy.viewport(320, 568);
   }
 
-  if (preset === "tablet") {
+  if (preset === 'tablet') {
     return cy.viewport(768, 1024);
   }
 
-  if (preset === "desktop") {
+  if (preset === 'desktop') {
     return cy.viewport(1024, 768);
   }
 });

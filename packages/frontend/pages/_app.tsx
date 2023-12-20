@@ -1,8 +1,6 @@
-// _app.tsx
-
-import { Provider } from "react-redux";
-import { AppProps } from "next/app";
-import store from "@redux/store";
+import store from '@redux/store';
+import { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

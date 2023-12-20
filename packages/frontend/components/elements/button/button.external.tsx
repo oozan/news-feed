@@ -1,28 +1,21 @@
-import clsx from "clsx";
+import { Icon } from '@elements/icon/icon';
+import clsx from 'clsx';
 
-import { ButtonBaseProps, buttonIconClasses } from "./button";
-
-import { Icon } from "@elements/icon/icon";
+import { ButtonBaseProps, buttonIconClasses } from './button';
 
 interface ButtonExternalProps {
-  children: ButtonBaseProps["children"];
+  children: ButtonBaseProps['children'];
   className?: string;
   url: string;
   testId?: string;
-  icon?: ButtonBaseProps["icon"];
+  icon?: ButtonBaseProps['icon'];
 }
 
-export const ButtonExternal = ({
-  children,
-  className = "",
-  url,
-  testId,
-  icon,
-}: ButtonExternalProps): JSX.Element => (
+export const ButtonExternal = ({ children, className = '', url, testId, icon }: ButtonExternalProps): JSX.Element => (
   <a
     href={url}
     className={clsx({ [className]: true })}
-    data-testid={testId ?? "button-external"}
+    data-testid={testId ?? 'button-external'}
     rel="noreferrer nofollow"
   >
     {children}

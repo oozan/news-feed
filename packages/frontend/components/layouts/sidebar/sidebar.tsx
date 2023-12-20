@@ -13,7 +13,7 @@ export const Sidebar = ({
 }: SidebarProps): JSX.Element | null => {
   const sidebarClasses = clsx(
     "relative z-[100] bg-black transition-all after:absolute after:inset-y-0 after:right-0 after:ml-[-100vw] after:bg-black after:pr-[100vw]",
-    { [className]: true }
+    { [className]: true },
   );
   return (
     <aside className={sidebarClasses} data-testid={testId ?? "sidebar"}>

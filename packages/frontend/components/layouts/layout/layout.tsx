@@ -1,6 +1,7 @@
+import clsx from "clsx";
+
 import { MobileNavigation } from "@blocks/mobile-navigation/mobile-navigation";
 import { Sidebar } from "@layouts/sidebar/sidebar";
-import clsx from "clsx";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ export interface LayoutProps {
 export const Layout = ({ children, testId }: LayoutProps): JSX.Element => {
   const layoutClasses = clsx(
     "relative mx-auto min-h-screen max-w-[1440px] lg:grid lg:grid-cols-[240px,1fr] lg:grid-rows-[80px,1fr]",
-    {}
+    {},
   );
   const mainClasses = clsx("max-lg:mt-14 lg:row-start-2");
 

@@ -1,26 +1,25 @@
-import clsx from "clsx";
+import { Icon } from '@elements/icon/icon';
+import clsx from 'clsx';
 
-import { ButtonBaseProps, buttonIconClasses } from "./button";
-
-import { Icon } from "@elements/icon/icon";
+import { ButtonBaseProps, buttonIconClasses } from './button';
 
 interface ButtonPlainProps {
-  children: ButtonBaseProps["children"];
+  children: ButtonBaseProps['children'];
   onClick: () => void;
   className?: string;
-  type?: "button" | "submit" | "reset" | undefined;
+  type?: 'button' | 'submit' | 'reset' | undefined;
   testId?: string;
   ariaExpanded?: boolean;
   ariaControls?: string;
-  isDisabled?: ButtonBaseProps["isDisabled"];
-  icon?: ButtonBaseProps["icon"];
+  isDisabled?: ButtonBaseProps['isDisabled'];
+  icon?: ButtonBaseProps['icon'];
 }
 
 export const ButtonPlain = ({
   children,
   onClick,
-  className = "",
-  type = "button",
+  className = '',
+  type = 'button',
   testId,
   ariaExpanded,
   ariaControls,
@@ -31,7 +30,7 @@ export const ButtonPlain = ({
     type={type}
     onClick={onClick}
     className={clsx({ [className]: true })}
-    data-testid={testId ?? "button-plain"}
+    data-testid={testId ?? 'button-plain'}
     aria-expanded={ariaExpanded}
     aria-controls={ariaControls}
     disabled={isDisabled}
