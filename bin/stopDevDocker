@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-compose -f ./docker/docker-compose.development.yml -p  docker-postgres-1 stop
+docker-compose -f ./docker/docker-compose.development.yml -p  postgres stop
