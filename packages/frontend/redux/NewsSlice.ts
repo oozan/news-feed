@@ -22,7 +22,7 @@ const initialState: NewsState = {
 };
 
 // Define an async thunk to fetch news from the backend API
-const fetchNews = createAsyncThunk('news/fetchNews', async () => {
+const fetchNews = createAsyncThunk<NewsDTO[], void>('news/fetchNews', async () => {
   const response = await fetch('http://localhost:3001/news-feed/news');
   const data = await response.json();
   return data;
