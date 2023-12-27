@@ -28,8 +28,10 @@ const fetchNews = createAsyncThunk<NewsDTO[], void>('news/fetchNews', async () =
   return data;
 });
 
+export const newsSlicePath = 'news';
+
 const newsSlice = createSlice({
-  name: 'news',
+  name: newsSlicePath,
   initialState,
   reducers: {},
   extraReducers: (builder) => {
