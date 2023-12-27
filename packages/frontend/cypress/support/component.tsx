@@ -23,21 +23,11 @@ import '../../i18n/i18n';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { mount as cypressMount } from 'cypress/react18';
-import { Session } from 'next-auth';
-import { SessionProvider } from 'next-auth/react';
 import { ReactNode } from 'react';
-import { FieldValues, FormProvider, UseFormReturn } from 'react-hook-form';
 import { Provider } from 'react-redux';
-
-import { MockNextRouter } from '../../mocks/mockNextRouter';
-import { mockSession } from '../../mocks/mockSession';
-import { mockUseFormClass } from '../../mocks/mockUseFormClass';
-import { RootState, createStore } from '../../redux/store';
+import { RootState } from '../../redux/store';
 
 type MountOptions = {
-  session?: Session;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  formMethods?: UseFormReturn<FieldValues, any>;
   customRouter?: Record<string, unknown>;
   state?: Partial<RootState>;
 };
@@ -54,21 +44,6 @@ declare global {
     }
   }
 }
-
-Cypress.Commands.add('mount', (component, options) => {
-  const { session = mockSession, formMethods = mockUseFormClass(cy), customRouter = {}, state = {} } = { ...options };
-
-  const AppWrapper = (
-    <Provider store={createStore(state)}>
-      <SessionProvider session={session}>
-        <MockNextRouter customRouter={customRouter}>
-          <FormProvider {...formMethods}>{component}</FormProvider>
-        </MockNextRouter>
-      </SessionProvider>
-    </Provider>
-  );
-  return cypressMount(AppWrapper, options);
-});
 
 // Example use:
 // cy.mount(<MyComponent />)
