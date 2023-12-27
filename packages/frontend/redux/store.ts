@@ -1,9 +1,6 @@
 // store.ts
-
 import { configureStore } from '@reduxjs/toolkit';
-
 import { newsReducer } from './NewsSlice';
-// Adjust the import path accordingly
 
 const store = configureStore({
   reducer: {
