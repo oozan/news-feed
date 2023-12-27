@@ -3,7 +3,7 @@ import { NewsController } from './news.controller';
 import { NewsService } from './news.service';
 import { NewsDTO } from './dto/news.dto';
 
-describe('Newa Controller Testing', () => {
+describe('News Controller Testing', () => {
   let newsController: NewsController;
 
   const news = [
