@@ -11,17 +11,15 @@
     --font-size-heading-5: 1.125rem; /* 18px*/
     --font-size-heading-6: 1rem; /* 16px*/
   }
-  
+
   @font-face {
     font-family: 'Fabrik';
     font-weight: 400;
-    src: url("/fonts/Fabrik-Regular.otf") format("opentype");
   }
 
   @font-face {
     font-family: 'Fabrik';
     font-weight: 700;
-    src: url("/fonts/Fabrik-Bold.otf") format("opentype");
   }
 
   html {
@@ -32,26 +30,26 @@
   }
 
   h1 {
-    font-size: var(--font-size-heading-1)
+    font-size: var(--font-size-heading-1);
   }
 
   h2 {
-    font-size: var(--font-size-heading-2)
+    font-size: var(--font-size-heading-2);
   }
-  
+
   h3 {
-    font-size: var(--font-size-heading-3)
+    font-size: var(--font-size-heading-3);
   }
-  
+
   h4 {
-    font-size: var(--font-size-heading-4)
+    font-size: var(--font-size-heading-4);
   }
-  
+
   h5 {
-    font-size: var(--font-size-heading-5)
+    font-size: var(--font-size-heading-5);
   }
 
   h6 {
-    font-size: var(--font-size-heading-6)
+    font-size: var(--font-size-heading-6);
   }
 }
