@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { newsReducer, newsSlicePath } from './NewsSlice';
+import { newsReducer, newsSlicePath } from './reducer/news.reducer';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
 
 const rootReducer = combineReducers({

@@ -1,7 +1,7 @@
 // news/index.tsx
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchNews, selectNews } from '@redux/NewsSlice';
+import { fetchNews, selectNews } from '@redux/reducer/news.reducer';
 import { AppDispatch } from '@redux/store';
 
 const NewsPage = () => {
