@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { newsReducer, newsSlicePath } from './reducer/news.reducer';
 import { TypedUseSelectorHook, useSelector } from 'react-redux';
+import { emptyNewsApi } from './api/emptyNewsApi';
 
 const rootReducer = combineReducers({
+  [emptyNewsApi.reducerPath]: emptyNewsApi.reducer,
   [newsSlicePath]: newsReducer,
 });
 
@@ -12,6 +14,11 @@ export const createStore = (initialValues?: any) =>
     preloadedState: initialValues,
     devTools: true,
     reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: false,
+        immutableCheck: { warnAfter: 100 },
+      }).concat(emptyNewsApi.middleware),
   });
 
 const store = createStore();
