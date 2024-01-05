@@ -21,37 +21,26 @@ const initialState: NewsState = {
   error: null,
 };
 
-// Define an async thunk to fetch news from the backend API
-const fetchNews = createAsyncThunk<NewsDTO[], void>('news/fetchNews', async () => {
-  const response = await fetch('http://localhost:3001/news-feed/news');
-  const data = await response.json();
-  return data;
-});
-
 export const newsSlicePath = 'news';
 
 const newsSlice = createSlice({
   name: newsSlicePath,
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchNews.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchNews.fulfilled, (state, action: PayloadAction<NewsDTO[]>) => {
-        state.status = 'succeeded';
-        state.news = action.payload;
-      })
-      .addCase(fetchNews.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message ?? 'Failed to fetch news';
-      });
+  reducers: {
+    fetchNewsPending(state) {
+      state.status = 'loading';
+    },
+    fetchNewsFulfilled(state, action: PayloadAction<NewsDTO[]>) {
+      state.status = 'succeeded';
+      state.news = action.payload;
+    },
+    fetchNewsRejected(state, action: PayloadAction<string>) {
+      state.status = 'failed';
+      state.error = action.payload ?? 'Failed to fetch news';
+    },
   },
 });
 
-export const selectNews = (state: { news: NewsState }) => state.news;
-
 // Export the reducer and the async thunk
+export const { fetchNewsPending, fetchNewsFulfilled, fetchNewsRejected } = newsSlice.actions;
 export const { reducer: newsReducer } = newsSlice;
-export { fetchNews }; // Export fetchNews once, without redeclaring

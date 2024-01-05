@@ -6,14 +6,21 @@ import { demoBaseQuery } from './demoBaseQuery';
 const isLocalBackend = process.env.NEXT_PUBLIC_IS_LOCAL_BACKEND?.toLocaleLowerCase() === 'true';
 const isDemo = true;
 
-const customBaseQuery = (args: string | FetchArgs, baseQueryApi: BaseQueryApi, extraOptions?: any) => {
-  const baseUrl = isLocalBackend ? '/api' : 'http://localhost:3001/news-feed/news';
-
-  return fetchBaseQuery({
-    baseUrl,
-  })(args, baseQueryApi, extraOptions);
+const ENDPOINT_MAPPING = {
+  news: 'news',
 };
 
+const customBaseQuery = (args: string | FetchArgs, baseQueryApi: BaseQueryApi, extraOptions?: any) => {
+  const baseUrlPrefix = '/api';
+
+  const baseUrlSuffix = Object.entries(ENDPOINT_MAPPING).find(([endpointPrefix]) =>
+    baseQueryApi.endpoint.startsWith(endpointPrefix)
+  )?.[1];
+
+  return fetchBaseQuery({
+    baseUrl: isLocalBackend ? baseUrlPrefix : `${baseUrlPrefix}/${baseUrlSuffix}`,
+  })(args, baseQueryApi, extraOptions);
+};
 export const emptyNewsApi = createApi({
   baseQuery: ((args: string | FetchArgs, api: BaseQueryApi, extraOptions?: any) => {
     const defaultBaseQuery = () => customBaseQuery(args, api, extraOptions);
