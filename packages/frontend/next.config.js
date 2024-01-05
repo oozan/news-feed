@@ -2,13 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    remotePatterns: [
+  async rewrites() {
+    return [
       {
-        protocol: 'https',
-        hostname: '**',
+        source: '/news-feed/:path*',
+        destination: 'http://localhost:3001/:path*',
       },
-    ],
+    ];
   },
 };
 
