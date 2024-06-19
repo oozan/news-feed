@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ./packages/backend:/app
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: news
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: news
+    ports:
+      - "5432:5432"

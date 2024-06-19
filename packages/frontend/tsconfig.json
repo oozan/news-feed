@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": "./",
+    "paths": {
+      "@elements/*": ["components/elements/*"],
+      "@blocks/*": ["components/blocks/*"],
+      "@layouts/*": ["components/layouts/*"],
+      "@page-components/*": ["components/pages/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@mocks/*": ["mocks/*"],
+      "@constants/*": ["constants/*"],
+      "@fixtures/*": ["fixtures/*"],
+      "@styles/*": ["styles/*"],
+      "@redux/*": ["redux/*"],
+      "@i18n/*": ["i18n/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx", "**/**/*.tsx", "SetupProxy.ts"],
+  "exclude": ["node_modules"]
+}

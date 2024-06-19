@@ -1,0 +1,131 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/news-feed": {
+      "get": {
+        "operationId": "App_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/news-feed/news": {
+      "get": {
+        "operationId": "News_getAll",
+        "parameters": [
+          {
+            "name": "created_at",
+            "required": false,
+            "in": "query",
+            "description": "Article is created at.",
+            "schema": {
+              "format": "date-time",
+              "type": "string"
+            }
+          },
+          {
+            "name": "created_by",
+            "required": false,
+            "in": "query",
+            "description": "Article is created by.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "news",
+            "required": false,
+            "in": "query",
+            "description": "Article News.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "content",
+            "required": false,
+            "in": "query",
+            "description": "Article Contents.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "required": false,
+            "in": "query",
+            "description": "Article Titles.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": false,
+            "in": "query",
+            "description": "Article IDs.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of news that provide data to the database of this API.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NewsDTO"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Version 1"]
+      }
+    }
+  },
+  "info": {
+    "title": "Edge Reference Solution Data API",
+    "description": "",
+    "version": "API version 1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "NewsDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "news": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": ["id", "title", "content", "news", "created_by", "created_at"]
+      }
+    }
+  }
+}

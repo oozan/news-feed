@@ -1,0 +1,94 @@
+{
+  "common": {
+    "initial": "Welcome to News page",
+    "paragraph_1": "You can find the latest news about our company.",
+    "paragraph_2": "The reason why we created this application is that we release daily or\nweekly news for our employees so that they can track our changes and\nlearn from our materials.",
+    "create": "Create",
+    "newsCreatedMessage": "Your message has been created.",
+    "welcome": "Welcome",
+    "edit": "Edit",
+    "email": "Email",
+    "language": "Language",
+    "dateFormat": "Date format",
+    "password": "Password",
+    "upload": "Upload",
+    "login": "Log in",
+    "signOut": "Sign out",
+    "back": "Back",
+    "readMore": "Read more",
+    "loading": "Loading",
+    "description": "Description",
+    "delete": "Delete",
+    "status": "Status",
+    "version": "Version",
+    "cancel": "Cancel",
+    "year": "Year",
+    "category": "Category",
+    "breadcrumb": "Breadcrumb",
+    "resume": "Resume",
+    "page": "Page",
+    "previous": "Previous",
+    "next": "Next",
+    "openDialog": "Open dialog",
+    "closeDialog": "Close dialog",
+    "closeDrawer": "Close drawer",
+    "update": "Update",
+    "publish": "Publish",
+    "of": "of",
+    "errors": {
+      "required": "This field is required",
+      "somethingWentWrong": "Something went wrong. Please try again later.",
+      "noData": "No data has been found.",
+      "failedToFetch": "Failed to fetch data",
+      "userExists": "User already exists"
+    },
+    "unit": {
+      "megabyte": "MB",
+      "kilobyte": "KB",
+      "byte": "B",
+      "gigabyte": "GB"
+    },
+    "toast": {
+      "close": "Close toast message"
+    }
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "organization": "Organization",
+    "news": "News",
+    "publish-news": "Publish News",
+    "more": "More"
+  },
+  "errorPage": {
+    "titles": {
+      "403": "403 - Page forbidden",
+      "404": "404 - Page not found",
+      "500": "500 - Server-side error occurred"
+    },
+    "goBackCta": "Go to dashboard"
+  },
+  "dashboard": {
+    "title": "Dashboard"
+  },
+  "messages": {
+    "title": "Messages",
+    "newMessage": "New message",
+    "inbox": "Inbox"
+  },
+  "news": {
+    "backToNews": "Back to news",
+    "publishedOn": "Published on",
+    "form": {
+      "title": "Title",
+      "content": "Content",
+      "news": "News",
+      "createdBy": "Created By",
+      "keyword": "Keyword",
+      "searchKeyword": "Search Keyword",
+      "period": "Period",
+      "search": "Search",
+      "fromDate": "From date",
+      "toDate": "To date"
+    }
+  }
+}
